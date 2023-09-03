@@ -1,5 +1,13 @@
+import { Announcement } from '../components/Announcement';
+import { Navbar } from '../components/Navbar';
+
 function Home() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <Announcement />
+      <Navbar />
+    </>
+  );
 }
 
 export default Home;
