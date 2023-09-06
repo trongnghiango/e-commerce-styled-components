@@ -1,12 +1,13 @@
 import { styled } from 'styled-components';
-import { ArrowProps } from '../../types/styleTypes';
+import { ArrowProps, SlideProps, WrapperProps } from '../../types/styleTypes';
 
-export const Container = styled.section`
+export const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  background-color: orange;
   position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 `;
 
 export const Arrow = styled.div<ArrowProps>`
@@ -22,18 +23,34 @@ export const Arrow = styled.div<ArrowProps>`
   bottom: 0;
   margin: auto;
   cursor: pointer;
-  opacity: 0.7;
+  z-index: 100;
+  opacity: 0.4;
   left: ${(props) => props.direction === 'left' && '20px'};
   right: ${(props) => props.direction === 'right' && '20px'};
+  &:hover {
+    background-color: gray;
+  }
+
+  &:active {
+    background-color: black;
+  }
 `;
-export const Wrapper = styled.div`
-  height: 100%;
-`;
-export const Slide = styled.div`
+export const Wrapper = styled.div<WrapperProps>`
+  height: 100vw;
   display: flex;
+  box-sizing: border-box;
+  transition: all 1.2s ease;
+  transform: translateX(
+    ${(props) => props.slideIndex && props.slideIndex * -100}vw
+  );
+`;
+export const Slide = styled.div<SlideProps>`
+  display: flex;
+  box-sizing: border-box;
   align-items: center;
   width: 100vw;
   height: 100vh;
+  background-color: ${(props) => props.bg};
 `;
 export const ImageContainer = styled.div`
   flex: 1;
@@ -53,6 +70,18 @@ export const InfoContainer = styled.div`
   padding: 50px;
 `;
 
-export const Title = styled.h1``;
-export const Desc = styled.p``;
-export const Button = styled.button``;
+export const Title = styled.h1`
+  font-size: 70px;
+`;
+export const Desc = styled.p`
+  margin: 50px 0px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
+`;
+export const Button = styled.button`
+  padding: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+`;
