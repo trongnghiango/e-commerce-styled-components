@@ -8,13 +8,13 @@ export const Left = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 30px;
 `;
 
 export const Logo = styled.h1``;
 
 export const Desc = styled.p`
-  margin: 20px 0px;
+  margin: 20px 0;
 `;
 
 export const SocialContainer = styled.div`
