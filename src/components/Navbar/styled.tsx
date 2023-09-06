@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 60px;
+  height: 70px;
   /* background-color: black; */
 `;
 
 export const Wrapper = styled.div`
   display: flex;
+  height: 100%;
   justify-content: space-between;
   /* background-color: red; */
-  padding: 20px 10px;
+  box-sizing: border-box;
+  padding: 20px 30px;
 `;
 
 export const Left = styled.div`
@@ -54,10 +56,12 @@ export const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 16px;
+  gap: 25px;
 `;
 
-export const MenuItem = styled.div``;
+export const MenuItem = styled.div`
+  cursor: pointer;
+`;
 
 export const CartContainer = styled.div`
   position: relative;
